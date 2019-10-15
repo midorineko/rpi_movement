@@ -1,13 +1,20 @@
 from PIL import Image
 import os
 import sys
+import urllib2 as urllib
+import io
 
 size = 50,32
 if(len(sys.argv) < 2):
 	im = Image.open("get.jpg")
 else:
-	image_file = sys.argv[1]
-	im = Image.open(image_file)
+	sysArg = sys.argv[1]
+	if sysArg.find("http") >= 0 :
+		fd = urllib.urlopen(sysArg)
+		image_file = io.BytesIO(fd.read())
+		im = Image.open(image_file)
+	else:
+		im = Image.open(sysArg)
 
 im.thumbnail(size)
 width, height = im.size
