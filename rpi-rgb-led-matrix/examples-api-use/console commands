@@ -1,0 +1,3 @@
+sudo ./demo -D 1 runtext.ppm --led-no-hardware-pulse --led-rows=16 --led-cols=32 --led-chain=2 --led-pixel-mapper="U-mapper"
+
+sudo ./demo -D 1 runtext.ppm --led-no-hardware-pulse --led-rows=16 --led-cols=32 --led-chain=2
