@@ -1,4 +1,5 @@
 from PIL import Image
+import os
 size = 320,32
 im = Image.open("get.jpg")
 im.thumbnail(size)
