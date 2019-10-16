@@ -50,7 +50,7 @@ class StillViewer(SampleBase):
 
             image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
-            offset_canvas.SetImage(image.convert('RGB'), 0)
+            offset_canvas.SetImage(image.convert('RGB'))
 
 # Main function
 # e.g. call with
