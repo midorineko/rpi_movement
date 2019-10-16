@@ -9,7 +9,7 @@ import io
 
 size = 50,32
 if(len(sys.argv) < 2):
-	im = Image.open("catnaps.jpg")
+	im = Image.open("../media/catnaps.jpg")
 else:
 	sysArg = sys.argv[1]
 	if sysArg.find("http") >= 0 :
