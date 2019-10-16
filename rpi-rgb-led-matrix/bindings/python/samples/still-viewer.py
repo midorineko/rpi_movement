@@ -18,13 +18,13 @@ class StillViewer(SampleBase):
         offset_canvas = self.matrix.CreateFrameCanvas()
         while True:
             size = 50,32
-        	sysArg = self.args.image
-        	if sysArg.find("http") >= 0 :
-        		fd = urllib.urlopen(sysArg)
-        		image_file = io.BytesIO(fd.read())
-        		im = Image.open(image_file).convert('RGB')
-        	else:
-        		im = Image.open(sysArg).convert('RGB')
+            sysArg = self.args.image
+            if sysArg.find("http") >= 0 :
+            	fd = urllib.urlopen(sysArg)
+            	image_file = io.BytesIO(fd.read())
+            	im = Image.open(image_file).convert('RGB')
+            else:
+            	im = Image.open(sysArg).convert('RGB')
             im.thumbnail(size)
             width, height = im.size
             left = (width - 32)/2
