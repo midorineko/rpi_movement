@@ -17,7 +17,7 @@ class StillViewer(SampleBase):
     def run(self):
         offset_canvas = self.matrix.CreateFrameCanvas()
         while True:
-            # size = 50,32
+            size = 50,32
             # if(len(sys.argv) < 2):
             # 	im = Image.open("../media/catnaps.jpg")
             # else:
