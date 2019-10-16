@@ -19,7 +19,7 @@ class StillViewer(SampleBase):
         while True:
             size = 50,32
             # if(len(sys.argv) < 2):
-        	im = Image.open("../media/catnaps.jpg")
+            	# im = Image.open("../media/catnaps.jpg")
             # else:
             # 	sysArg = sys.argv[1]
             # 	if sysArg.find("http") >= 0 :
@@ -28,7 +28,7 @@ class StillViewer(SampleBase):
             # 		im = Image.open(image_file)
             # 	else:
             # 		im = Image.open(sysArg)
-
+            im = Image.open("../media/catnaps.jpg")
             im.thumbnail(size)
             width, height = im.size
             left = (width - 32)/2
@@ -50,7 +50,7 @@ class StillViewer(SampleBase):
 
             image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
-            matrix.SetImage(image.convert('RGB'))
+            self.matrix.SetImage(image.convert('RGB'))
 
 # Main function
 # e.g. call with
