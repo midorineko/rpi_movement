@@ -46,8 +46,6 @@ class StillViewer(SampleBase):
             # options.parallel = 1
             # options.hardware_mapping = 'regular'
 
-            b
-
             # matrix = RGBMatrix(options = options)
 
             image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
