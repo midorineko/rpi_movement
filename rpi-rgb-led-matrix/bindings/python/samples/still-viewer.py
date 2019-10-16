@@ -28,7 +28,7 @@ class StillViewer(SampleBase):
             # 		im = Image.open(image_file)
             # 	else:
             # 		im = Image.open(sysArg)
-            im = Image.open("../media/catnaps.jpg").convert('RGB')
+            im = Image.open(self.args.image).convert('RGB')
             im.thumbnail(size)
             width, height = im.size
             left = (width - 32)/2
