@@ -19,8 +19,6 @@ class StillViewer(SampleBase):
             	im = Image.open(image_file).convert('RGB')
             else:
             	im = Image.open(sysArg).convert('RGB')
-
-        	width, height = im.size
             if im.size[0] > im.size[1]:
             	size = (self.matrix.width + self.matrix.width),self.matrix.width
                 im.thumbnail(size)
