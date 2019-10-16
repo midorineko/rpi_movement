@@ -23,10 +23,10 @@ class StillViewer(SampleBase):
 
             im.thumbnail(size)
             width, height = im.size
-            left = (width - 32)/2
-            top = (height - 32)/2
-            right = (width + 32)/2
-            bottom = (height + 32)/2
+            left = (width - self.matrix.width)/2
+            top = (height - self.matrix.height)/2
+            right = (width + self.matrix.width)/2
+            bottom = (height + self.matrix.height)/2
             image = im.crop((left, top, right, bottom))
 
             image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
