@@ -18,19 +18,11 @@ class StillViewer(SampleBase):
             if sysArg.find("http") >= 0 :
             	fd = urllib.urlopen(sysArg)
             	image_file = io.BytesIO(fd.read())
-            	im = Image.open(image_file).convert('RGB')
+            	image = Image.open(image_file).convert('RGB')
             else:
-            	im = Image.open(sysArg).convert('RGB')
-            	
-            im.thumbnail(size)
-            width, height = im.size
-            left = (width - 32)/2
-            top = (height - 32)/2
-            right = (width + 32)/2
-            bottom = (height + 32)/2
-            image = im.crop((left, top, right, bottom))
+            	image = Image.open(sysArg).convert('RGB')
 
-            image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
+            self.image.resize((self.matrix.width, self.matrix.height), Image.ANTIALIAS)            
             self.matrix.SetImage(image)
 
 # Main function
