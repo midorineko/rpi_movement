@@ -12,7 +12,6 @@ class StillViewer(SampleBase):
     
     def run(self):
         while True:
-            size = (self.matrix.width + self.matrix.width),self.matrix.width
             sysArg = self.args.image
             if sysArg.find("http") >= 0 :
             	fd = urllib.urlopen(sysArg)
@@ -20,6 +19,12 @@ class StillViewer(SampleBase):
             	im = Image.open(image_file).convert('RGB')
             else:
             	im = Image.open(sysArg).convert('RGB')
+
+        	width, height = im.size
+        	if width > height:
+            	size = (self.matrix.width + self.matrix.width),self.matrix.width
+        	else:
+        		size = self.matrix.height,(self.matrix.height + self.matrix.height)
 
             im.thumbnail(size)
             width, height = im.size
