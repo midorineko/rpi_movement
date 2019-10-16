@@ -12,7 +12,7 @@ from samplebase import SampleBase
 
 class StillViewer(SampleBase):
     def __init__(self, *args, **kwargs):
-        super(ImageScroller, self).__init__(*args, **kwargs)
+        super(StillViewer, self).__init__(*args, **kwargs)
         self.parser.add_argument("-i", "--image", help="The image to display", default="../../../examples-api-use/runtext.ppm")
 
     def run(self):
