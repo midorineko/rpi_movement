@@ -11,7 +11,6 @@ class StillViewer(SampleBase):
         self.parser.add_argument("-i", "--image", help="Image Location or URL", default="../media/catnaps.jpg")
     
     def run(self):
-        # offset_canvas = self.matrix.CreateFrameCanvas()
         while True:
             size = (self.matrix.width + self.matrix.width),self.matrix.width
             sysArg = self.args.image
