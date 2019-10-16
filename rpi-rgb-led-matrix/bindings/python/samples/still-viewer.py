@@ -22,7 +22,7 @@ class StillViewer(SampleBase):
             else:
             	image = Image.open(sysArg).convert('RGB')
 
-            self.image.resize((self.matrix.width, self.matrix.height), Image.ANTIALIAS)            
+            image.resize((self.matrix.width, self.matrix.height), Image.ANTIALIAS)            
             self.matrix.SetImage(image)
 
 # Main function
