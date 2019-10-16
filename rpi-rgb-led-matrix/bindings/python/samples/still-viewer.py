@@ -28,7 +28,7 @@ class StillViewer(SampleBase):
             # 		im = Image.open(image_file)
             # 	else:
             # 		im = Image.open(sysArg)
-            im = Image.open("../media/catnaps.jpg")
+            im = Image.open("../media/catnaps.jpg").convert('RGB')
             im.thumbnail(size)
             width, height = im.size
             left = (width - 32)/2
@@ -46,11 +46,13 @@ class StillViewer(SampleBase):
             # options.parallel = 1
             # options.hardware_mapping = 'regular'
 
+            b
+
             # matrix = RGBMatrix(options = options)
 
             image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
-            offset_canvas.SetImage(image.convert('RGB'))
+            self.matrix.SetImage(image)
 
 # Main function
 # e.g. call with
