@@ -43,3 +43,11 @@ if __name__ == "__main__":
     still_viewer = StillViewer()
     if (not still_viewer.process()):
         still_viewer.print_help()
+
+# Created By: Mr. CatNaps
+# Date: 10/15/2019
+# Description:
+# StillViewer will automatically take a local or web image and display it on a LED Matrix. 
+# StillViewer will also determine if the image is landscape or portrait and automatically resize and crop it.
+# It has the latest option flags and supports U-mapping. 
+# Set the '-i=' flag to a local path or a URL and it is ready to go.
