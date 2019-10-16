@@ -21,10 +21,12 @@ class StillViewer(SampleBase):
             	im = Image.open(sysArg).convert('RGB')
 
         	width, height = im.size
-        	size = self.matrix.height,(self.matrix.height + self.matrix.height)
             if im.size[0] > im.size[1]:
             	size = (self.matrix.width + self.matrix.width),self.matrix.width
-            im.thumbnail(size)
+                im.thumbnail(size)
+            else:
+        	    size = self.matrix.height,(self.matrix.height + self.matrix.height)
+        	    im.thumbnail(size)
             width, height = im.size
             left = (width - self.matrix.width)/2
             top = (height - self.matrix.height)/2
