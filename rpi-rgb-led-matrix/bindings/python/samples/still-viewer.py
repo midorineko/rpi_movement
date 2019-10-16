@@ -51,7 +51,7 @@ class StillViewer(SampleBase):
             image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
 
             double_buffer = self.matrix.CreateFrameCanvas()
-            double_buffer.SetImage(image.convert('RGB'), -xpo)
+            double_buffer.SetImage(image.convert('RGB'), 10)
 
 # Main function
 # e.g. call with
