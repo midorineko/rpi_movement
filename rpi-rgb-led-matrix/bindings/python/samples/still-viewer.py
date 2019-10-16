@@ -51,14 +51,19 @@ class StillViewer(SampleBase):
 
         matrix.SetImage(image.convert('RGB'))
 
+        try:
+            print("Press CTRL-C to stop.")
+            while True:
+                time.sleep(100)
+        except KeyboardInterrupt:
+            sys.exit(0)
+            
 # Main function
 # e.g. call with
 #  sudo ./still-viewer.py --chain=4
 # if you have a chain of four
 if __name__ == "__main__":
     still_viewer = StillViewer()
-    if (not still_viewer.process()):
-        still_viewer.print_help()
 
 
 
