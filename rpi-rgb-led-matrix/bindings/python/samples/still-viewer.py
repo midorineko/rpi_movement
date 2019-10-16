@@ -22,7 +22,7 @@ class StillViewer(SampleBase):
 
         	width, height = im.size
         	size = self.matrix.height,(self.matrix.height + self.matrix.height)
-        	if width > height:
+            if im.size[0] > im.size[1]:
             	size = (self.matrix.width + self.matrix.width),self.matrix.width
             im.thumbnail(size)
             width, height = im.size
