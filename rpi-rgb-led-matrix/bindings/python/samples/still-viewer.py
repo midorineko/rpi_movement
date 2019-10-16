@@ -11,24 +11,20 @@ from samplebase import SampleBase
 class StillViewer(SampleBase):
     def __init__(self, *args, **kwargs):
         super(StillViewer, self).__init__(*args, **kwargs)
-        self.parser.add_argument("-i", "--image", help="The image to display", default="../../../examples-api-use/runtext.ppm")
+        self.parser.add_argument("-i", "--image", help="The image to display", default="../media/catnaps.jpg")
 
     
     def run(self):
         offset_canvas = self.matrix.CreateFrameCanvas()
         while True:
             size = 50,32
-            # if(len(sys.argv) < 2):
-            	# im = Image.open("../media/catnaps.jpg")
-            # else:
-            # 	sysArg = sys.argv[1]
-            # 	if sysArg.find("http") >= 0 :
-            # 		fd = urllib.urlopen(sysArg)
-            # 		image_file = io.BytesIO(fd.read())
-            # 		im = Image.open(image_file)
-            # 	else:
-            # 		im = Image.open(sysArg)
-            im = Image.open(self.args.image).convert('RGB')
+        	sysArg = self.args.image
+        	if sysArg.find("http") >= 0 :
+        		fd = urllib.urlopen(sysArg)
+        		image_file = io.BytesIO(fd.read())
+        		im = Image.open(image_file).convert('RGB')
+        	else:
+        		im = Image.open(sysArg).convert('RGB')
             im.thumbnail(size)
             width, height = im.size
             left = (width - 32)/2
