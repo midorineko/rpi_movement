@@ -8,7 +8,7 @@ from samplebase import SampleBase
 class StillViewer(SampleBase):
     def __init__(self, *args, **kwargs):
         super(StillViewer, self).__init__(*args, **kwargs)
-        self.parser.add_argument("-i", "--image", help="Image Location or URL", default="../media/catnaps.jpg")
+        self.parser.add_argument("-i", "--image", help="Image Location or URL", default="../insta/teal.jpg")
     
     def run(self):
         while True:
@@ -50,4 +50,4 @@ if __name__ == "__main__":
 # StillViewer will automatically take a local or web image and display it on a LED Matrix. 
 # StillViewer will also determine if the image is landscape or portrait and automatically resize and crop it.
 # It has the latest option flags and supports U-mapping. 
-# Set the '-i=' flag to a local path or a URL and it is ready to go.
+# Set the '-i=' flag to a local path or a URL and it is ready to go09-=
